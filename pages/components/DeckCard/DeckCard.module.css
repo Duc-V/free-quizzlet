@@ -1,0 +1,7 @@
+
+.deckcard{
+    background: lightblue;
+    width: 20rem;
+    height: auto;
+    aspect-ratio: 3/2;
+}

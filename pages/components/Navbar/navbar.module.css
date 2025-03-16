@@ -1,10 +1,33 @@
-.navbar{
-    position: fixed;
-    width: clamp(200px, 10vw, 350px);
+
+
+.nav{
+    display:inline-block;
+    position : fixed;
+    top: 10rem;
+    left: 10rem;
+}
+
+.list{
+    width: clamp(200px, 6vw, 350px);
     background: #0a0a0a;
-    height: 100vh;
     color: white;
-    padding: min(2rem, 8%);
+    padding: min(1rem, 5%);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 2rem;
+    background: lightblue;
+    margin-bottom: 0.5rem;
 }
 
 .icon{
@@ -12,5 +35,11 @@
     justify-content: start;
     align-items: center;
     gap: 1rem;
-    margin-top: 0.4rem;
+    padding-left: min(0.4rem, 3%);
+    border-radius: 0.5rem;
+}
+
+.icon:hover{
+    color: black;
+    background: white;
 }

@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background: black;
+    gap:1rem;
+}
+
+.deck{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: min(5rem, 8%);
+    width: clamp(60vw, 80vw, 80vw);
+    height: clamp(50vh, 70vh, 100vh);
+}
