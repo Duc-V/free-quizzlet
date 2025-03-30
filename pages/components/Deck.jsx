@@ -3,6 +3,7 @@ import useStore from "@/pages/hooks/useStore";
 import DeckCard from "@/pages/components/DeckCard/DeckCard";
 import Link from 'next/link';
 import styles from "./Deck.module.css"
+import useFlashCards from "@/pages/hooks/useFlashCards";
 const Deck = () => {
 
     const store = useStore();
@@ -10,6 +11,8 @@ const Deck = () => {
     if(!store) return <p>loading</p>;
 
     const {quizzes} = store;
+
+    const {questions, handleChange, addNewCard, deleteCard} = useFlashCards();
 
     return (
             <div className={styles.deck}>
@@ -25,8 +28,6 @@ const Deck = () => {
                             <DeckCard key={quiz.id} quiz={quiz}/>
                         </Link>
                     ))}
-
-
                 </div>
             </div>
     );

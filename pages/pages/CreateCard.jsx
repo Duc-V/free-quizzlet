@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import useStore from '../hooks/useStore'
 import FlashCard from '../components/FlashCard/FlashCard'
-import useCreateCard from '../hooks/useFlashCards'
+import useFlashCards from '../hooks/useFlashCards'
 import Link from 'next/link'
 const CreateCard = () => {
     const store = useStore();
@@ -12,7 +12,7 @@ const CreateCard = () => {
 
     const {addQuiz} = store;
 
-    const {questions, handleChange, addNewCard, deleteCard} = useCreateCard();
+    const {questions, handleChange, addNewCard, deleteCard} = useFlashCards();
 
     const updateQuizzName = (name) => {
         setNameAndDescription(prev => ({...prev, name: name}))
