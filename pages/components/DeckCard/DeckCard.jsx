@@ -5,8 +5,7 @@ import Link from 'next/link';
 const DeckCard = ({quiz}) => {
     return (
         <div className={styles.deckcard}>
-            {quiz.id}
-            {quiz.value}
+            {quiz.name}
         </div>
     );
 };

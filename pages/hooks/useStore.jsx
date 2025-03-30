@@ -1,17 +1,22 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import id from "@/pages/pages/card/[id]";
 
 const useStore = create(
     persist(
-        (set) => ({
-            quizzes: [{ id: "quizz1", value: 10000 }, { id: "quizz2", value: 10000 },{ id: "quizz3", value: 10000 }, { id: "quizz4", value: 10000 },
-                { id: "quizz5", value: 10000 }, { id: "quizz6", value: 10000 }
-            ],
+        (set,get) => ({
+
+            quizzes: [],
 
             addQuiz: (quiz) => set((state) => ({ quizzes: [...state.quizzes, quiz] })),
 
+            getQuiz: (id) => {
+                return get().quizzes.find((quiz) => quiz.id == id);
+            },
+
             removeQuiz: (id) =>
                 set((state) => ({
+
                     quizzes: state.quizzes.filter((quiz) => quiz.id !== id),
                 })),
 
