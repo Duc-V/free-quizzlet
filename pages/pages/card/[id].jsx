@@ -15,8 +15,8 @@ const Id = () => {
     useEffect(() => {
         if (id) {
             const fetchedQuiz = getQuiz(id);
-            console.log('ID:', id);
-            console.log('Fetched Quiz:', fetchedQuiz);
+            // console.log('ID:', id);
+            // console.log('Fetched Quiz:', fetchedQuiz);
             setQuiz(fetchedQuiz);
         }
     }, [id, getQuiz]);
@@ -33,6 +33,7 @@ const Id = () => {
 
     return (
         <div>
+            <div>{quiz.name}</div>
             <Carousel quiz={quiz} />
         </div>
     );

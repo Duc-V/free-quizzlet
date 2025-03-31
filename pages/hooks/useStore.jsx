@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import id from "@/pages/pages/card/[id]";
 
 const useStore = create(
     persist(

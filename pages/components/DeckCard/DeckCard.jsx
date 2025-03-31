@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './DeckCard.module.css'
 import useFlashCards from "@/pages/hooks/useFlashCards";
 import useStore from "@/pages/hooks/useStore"
+import Link from 'next/link';
 const DeckCard = ({quiz}) => {
 
     const {removeQuiz} = useStore();
@@ -21,6 +22,16 @@ const DeckCard = ({quiz}) => {
             <button onClick={rmQuiz(quiz.id)}>
                 delete card
             </button>
+            <Link
+                href={{
+                    pathname: '/pages/edit/[slug]',
+                    query: { slug: quiz.id },
+                }}
+            >
+                <div>
+                    edit
+                </div>
+            </Link>
         </div>
     );
 };

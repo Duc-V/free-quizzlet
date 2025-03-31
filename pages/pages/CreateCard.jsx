@@ -22,7 +22,7 @@ const CreateCard = () => {
         setNameAndDescription(prev => ({...prev, description: description}))
     }
 
-    const SaveQuiz = () =>{
+    const saveQuiz = () =>{
         addQuiz(
             {
                 "id": Date.now(),
@@ -74,7 +74,7 @@ const CreateCard = () => {
             <Link href={
                 {pathname: '/'}
             }>
-                <div onClick={SaveQuiz}>
+                <div onClick={saveQuiz}>
                     save
                 </div>
             </Link>
