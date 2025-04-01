@@ -11,7 +11,7 @@ const FlashCard = ({ question, handleChange, deleteCard}) => {
                 <input
                     type="text"
                     id="question"
-                    value={question.question}
+                    value={question?.question || ''}
                     onChange={(e) => handleChange(question.id, "question", e.target.value)}
                     placeholder="Questions"
                 />
@@ -23,7 +23,7 @@ const FlashCard = ({ question, handleChange, deleteCard}) => {
                 <input
                     type="text"
                     id="answer"
-                    value={question.answer}
+                    value={question?.answer || ''}
                     onChange={(e) => handleChange(question.id, "answer", e.target.value)}
                     placeholder="Answer"
                 />
