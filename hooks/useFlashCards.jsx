@@ -1,5 +1,4 @@
 import {useState, useEffect} from "react";
-import FlashCard from "@/pages/components/FlashCard/FlashCard";
 
 const useFlashCards = (questionList) => {
     const [questions, setQuestions] = useState(questionList || []);

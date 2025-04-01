@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className={styles.list}>
                 <div className={styles.icon}>
                     <HomeRoundedIcon fontSize="large"/>
-                    <Link href='/'>Home</Link>
+                    <Link href='/public'>Home</Link>
                 </div>
                 <div className={styles.icon}>
                     <FolderIcon fontSize="large"/>

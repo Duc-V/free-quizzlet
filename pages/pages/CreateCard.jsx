@@ -1,8 +1,8 @@
 import React from 'react';
 import {useState} from 'react';
-import useStore from '../hooks/useStore'
-import FlashCard from '../components/FlashCard/FlashCard'
-import useFlashCards from '../hooks/useFlashCards'
+import useStore from '@/hooks/useStore'
+import FlashCard from '@/components/FlashCard/FlashCard'
+import useFlashCards from '@/hooks/useFlashCards'
 import Link from 'next/link'
 const CreateCard = () => {
     const store = useStore();

@@ -1,8 +1,8 @@
 import React from 'react';
 import {useRouter} from "next/router";
-import useStore from "@/pages/hooks/useStore";
-import useFlashCards from "@/pages/hooks/useFlashCards";
-import FlashCard from "@/pages/components/FlashCard/FlashCard";
+import useStore from "@/hooks/useStore";
+import useFlashCards from "@/hooks/useFlashCards";
+import FlashCard from "@/components/FlashCard/FlashCard";
 const MyComponent = () => {
     const router = useRouter();
     const { id } = router.query;

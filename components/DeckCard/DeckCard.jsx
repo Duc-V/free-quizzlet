@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './DeckCard.module.css'
-import useFlashCards from "@/pages/hooks/useFlashCards";
-import useStore from "@/pages/hooks/useStore"
+import useStore from "@/hooks/useStore"
 import Link from 'next/link';
 const DeckCard = ({quiz}) => {
 

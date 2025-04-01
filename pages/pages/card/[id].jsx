@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Carousel from '../../components/Carousel/Carousel'
-import useStore from '../../hooks/useStore';
+import Carousel from '@/components/Carousel/Carousel'
+import useStore from '@/hooks/useStore';
 import { useEffect, useState } from 'react';
 const Id = () => {
     const router = useRouter();

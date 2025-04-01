@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState} from 'react'
-import button from "@/pages/components/Button/Button";
+import button from "@/components/Button/Button";
 const Carousel = ({quiz}) => {
 
     const questionsList = quiz.questions;
