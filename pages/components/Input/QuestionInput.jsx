@@ -8,7 +8,7 @@ const MyComponent = ({question, setQuestion, setAnswer}) => {
                     Question:
                     <input
                         type="text"
-                        value={question.question}
+                        value={question?.question || ''}
                         onChange={(e) => setQuestion(e.target.value)}
                         placeholder="Enter your question"
                     />
@@ -19,7 +19,7 @@ const MyComponent = ({question, setQuestion, setAnswer}) => {
                     Answer:
                     <input
                         type="text"
-                        value={question.answer}
+                        value={question?.answer || ''}
                         onChange={(e) => setAnswer(e.target.value)}
                         placeholder="Enter your answer"
                     />
