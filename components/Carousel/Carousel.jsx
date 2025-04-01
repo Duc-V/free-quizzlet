@@ -3,6 +3,8 @@ import {useState} from 'react'
 import button from "@/components/Button/Button";
 const Carousel = ({quiz}) => {
 
+    if(quiz.questions.length === 0 ) return <div>No questions</div>;
+
     const questionsList = quiz.questions;
 
     const [index,setIndex] = useState(0);
