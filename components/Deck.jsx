@@ -18,15 +18,8 @@ const Deck = () => {
             <div className={styles.deck}>
                 <div className={styles.container}>
 
-
                     {quizzes.map( (quiz) => (
-
-                        <Link href={{
-                            pathname: 'pages/card/[slug]',
-                            query: { slug: quiz.id },
-                        }}>
-                            <DeckCard key={quiz.id} quiz={quiz}/>
-                        </Link>
+                        <DeckCard key={quiz.id} quiz={quiz} />
                     ))}
                 </div>
             </div>

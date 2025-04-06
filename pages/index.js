@@ -3,7 +3,7 @@ import Home from "@/pages/pages/Home"
 export default function App() {
   return (
     <div>
-        <Navbar/>
+        {/*<Navbar/>*/}
         <Home/>
     </div>
   );

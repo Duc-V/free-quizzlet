@@ -1,7 +1,8 @@
 
 .deckcard{
     background: lightblue;
-    width: 20rem;
-    height: auto;
-    aspect-ratio: 3/2;
+    min-width: 20rem;
+    border: 3px solid black;
+    /*height: clamp(100px, 100px, 100px);*/
+    /*aspect-ratio: 3/2;*/
 }

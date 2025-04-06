@@ -9,11 +9,11 @@ const MyComponent = () => {
 
     const {getQuiz, editQuiz} = useStore()
 
+    // get the current quiz (set of questions)
     const quiz = getQuiz(id) || [];
 
+    // useFlashCard is used to manipulate the quiz data
     const {questions, handleChange, addNewCard, deleteCard} = useFlashCards(quiz.questions);
-
-    console.log(questions);
 
     if (!id || !questions) return <p>Loading...</p>;
 
@@ -35,6 +35,9 @@ const MyComponent = () => {
                     ))
                 }
 
+                <div onClick={addNewCard}>
+                    Add question
+                </div>
                 <div onClick={updateQuiz}>
                     Update quiz
                 </div>
