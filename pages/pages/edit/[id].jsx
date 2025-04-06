@@ -9,8 +9,6 @@ const MyComponent = () => {
 
     const {getQuiz, editQuiz} = useStore()
 
-
-
     const quiz = getQuiz(id) || [];
 
     const {questions, handleChange, addNewCard, deleteCard} = useFlashCards(quiz.questions);
