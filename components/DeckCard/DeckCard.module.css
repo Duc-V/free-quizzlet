@@ -1,5 +1,7 @@
 
 .deckcard{
+    display: flex;
+    flex-direction: row;
     background: lightblue;
     min-width: 20rem;
     border: 3px solid black;

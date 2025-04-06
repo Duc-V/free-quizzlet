@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './DeckCard.module.css'
 import useStore from "@/hooks/useStore"
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import DescriptionIcon from '@mui/icons-material/Description';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 const DeckCard = ({quiz}) => {
 
     const {removeQuiz} = useStore();
     const router = useRouter();
+
+
 
     const rmQuiz = (id) => (event) => {
         event.stopPropagation(); // Prevents the event from reaching the parent
@@ -24,24 +29,37 @@ const DeckCard = ({quiz}) => {
     };
 
 
-
     return (
-        <div className={styles.deckcard}>
+        <div >
             <Link href={{
                 pathname: 'pages/card/[slug]',
                 query: { slug: quiz.id },
-            }}>
+
+            }}className={styles.deckcard}>
                 <div>
-                    {quiz.name ? quiz.name : "unnamed quiz"}
+                    <DescriptionIcon
+                        sx={{ fontSize: 30 }}
+                    />
                 </div>
 
-                <span onClick={rmQuiz(quiz.id)}>
-                delete card
-                </span>
+                <div>
+                    <div>
+                        {quiz.name ? quiz.name : "unnamed quiz"}
+                        <span onClick={rmQuiz(quiz.id)}>
+                            <DeleteIcon/>
+                        </span>
+                        <span onClick={goToEdit}>
+                            <EditIcon/>
+                        </span>
+                    </div>
 
-                <div onClick={goToEdit}>
-                    edit
+                    <span>
+                        Flashcard set - {quiz.questions.length} items
+                    </span>
+
+
                 </div>
+
             </Link>
         </div>
     );
