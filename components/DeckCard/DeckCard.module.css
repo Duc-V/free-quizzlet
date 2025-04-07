@@ -2,9 +2,19 @@
 .deckcard{
     display: flex;
     flex-direction: row;
-    background: lightblue;
+    background: #a3d5ff;
     min-width: 20rem;
     border: 3px solid black;
-    /*height: clamp(100px, 100px, 100px);*/
-    /*aspect-ratio: 3/2;*/
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+
+.util{
+    position: absolute;
+    right: 0;
 }

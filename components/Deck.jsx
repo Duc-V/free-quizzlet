@@ -12,7 +12,6 @@ const Deck = () => {
 
     const {quizzes} = store;
 
-    const {questions, handleChange, addNewCard, deleteCard} = useFlashCards();
 
     return (
             <div className={styles.deck}>

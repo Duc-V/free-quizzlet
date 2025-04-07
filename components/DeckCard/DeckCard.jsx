@@ -36,26 +36,32 @@ const DeckCard = ({quiz}) => {
                 query: { slug: quiz.id },
 
             }}className={styles.deckcard}>
-                <div>
+                <div className={styles.icon}>
                     <DescriptionIcon
-                        sx={{ fontSize: 30 }}
+                        sx={{ fontSize: 35 }}
                     />
                 </div>
 
                 <div>
+                    {quiz.name ? quiz.name : "unnamed quiz"}
                     <div>
-                        {quiz.name ? quiz.name : "unnamed quiz"}
-                        <span onClick={rmQuiz(quiz.id)}>
-                            <DeleteIcon/>
-                        </span>
-                        <span onClick={goToEdit}>
-                            <EditIcon/>
-                        </span>
-                    </div>
-
-                    <span>
                         Flashcard set - {quiz.questions.length} items
+                    </div>
+                </div>
+
+                <div className={styles.util}>
+                   <span onClick={rmQuiz(quiz.id)}>
+                            <DeleteIcon/>
                     </span>
+                    <span onClick={goToEdit}>
+                            <EditIcon/>
+                    </span>
+                </div>
+
+                <div>
+
+
+
 
 
                 </div>

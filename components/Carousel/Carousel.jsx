@@ -1,40 +1,23 @@
 import React from 'react';
 import {useState} from 'react'
 import button from "@/components/Button/Button";
-const Carousel = ({quiz}) => {
-
-    if(quiz.questions.length === 0 ) return <div>No questions</div>;
-
-    const questionsList = quiz.questions;
-
-    const [index,setIndex] = useState(0);
-
-    const indexIncrement = () => {
-        setIndex((prevIndex) => (prevIndex + 1) % questionsList.length);
-    }
-
-    const indexDecrement = () => {
-        setIndex((prevIndex) => (prevIndex - 1 + questionsList.length) % questionsList.length);
-    };
+import styles from "./carousel.module.css";
+const Carousel = ({questionsList, index, isFlipped, setIsFlipped}) => {
 
 
     return (
-        <div>
-            <div>
-                {questionsList[index].question}
-            </div>
-            <div>
-                {questionsList[index].answer}
-            </div>
-            <div>
-                <button onClick={indexIncrement}>
-                    next question
-                </button>
-            </div>
-            <div>
-                <button onClick={indexDecrement}>
-                    previous question
-                </button>
+        <div className={styles.container}>
+            <div className={styles.carousel} onClick={setIsFlipped}>
+
+                {isFlipped ?
+                    <div className={styles.card}>
+                        {questionsList[index].question}
+                    </div>
+                    :
+                    <div className={styles.card}>
+                        {questionsList[index].answer}
+                    </div>
+                }
             </div>
         </div>
     );

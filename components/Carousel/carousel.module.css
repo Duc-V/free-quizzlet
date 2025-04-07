@@ -1,0 +1,26 @@
+.container {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card{
+    min-width: 20rem;
+    aspect-ratio: 5/2;
+    position: absolute;
+    text-align: center;
+    @media (min-width: 768px) {
+        min-width: 50rem;
+    }
+
+}
+
