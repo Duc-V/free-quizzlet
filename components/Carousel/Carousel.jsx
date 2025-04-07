@@ -1,23 +1,18 @@
 import React from 'react';
-import {useState} from 'react'
-import button from "@/components/Button/Button";
 import styles from "./carousel.module.css";
 const Carousel = ({questionsList, index, isFlipped, setIsFlipped}) => {
 
 
     return (
         <div className={styles.container}>
-            <div className={styles.carousel} onClick={setIsFlipped}>
-
-                {isFlipped ?
-                    <div className={styles.card}>
+            <div className={` ${styles.carousel} ${isFlipped ? styles.cardFlip : ''}`} onClick={setIsFlipped}>
+                    <div className={`${styles.card} ${styles.front}`}>
                         {questionsList[index].question}
                     </div>
-                    :
-                    <div className={styles.card}>
+
+                    <div className={`${styles.card} ${styles.back}`}>
                         {questionsList[index].answer}
                     </div>
-                }
             </div>
         </div>
     );
