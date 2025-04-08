@@ -1,42 +1,88 @@
-.container {
-    width: 100vw;
-    height: 50vh;
+.carousel {
+    /*positioning*/
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /*dimensions*/
+    min-width: 90vw;
+    height: auto;
+    aspect-ratio: 5/3;
+
+    /*styling*/
+    padding: min(5vw, 2rem);
+
+
+    /*When the screen width is 768px or wider*/
+    @media (min-width: 768px) {
+        min-width: 35vw;
+    }
 }
 
-.carousel {
+.container {
+    /*positioning*/
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    /*dimensions*/
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    /*styling*/
+    border-radius: clamp(10px, 1rem, 20px);
+
+}
+
+.cardContainer{
+    /*positioning*/
     position: relative;
 
+    /*dimensions*/
+    width: 100%;
+    height: 100%;
+
+    /*transforms*/
     transform-style: preserve-3d;
     transition: all 0.8s ease;
+
+
 }
 
-
 .card{
-    min-width: 20rem;
-    aspect-ratio: 5/2;
+    /*positioning*/
     position: absolute;
-    text-align: center;
-    @media (min-width: 768px) {
-        min-width: 50rem;
-    }
+    display: flex;
+    justify-content: center;
 
+    /*dimensions*/
+    width: 100%;
+    height: 100%;
+
+    /*text wrap*/
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    /*backface visibility*/
+    backface-visibility: hidden;
+
+    /* Adding some padding */
+    padding: 1rem;
+    overflow-y: scroll;
+    border-radius: clamp(10px, 1rem, 20px);
+    background: #007bff;
+
+    scrollbar-width: none;
 }
 
 .front{
-    backface-visibility: hidden;
-    background: green;
+    font-size: clamp(1rem, 1vw + 1rem, 4rem);
+
 }
 
 .back{
-    backface-visibility: hidden;
     transform: rotateX(180deg);
-    background: lightblue;
 }
 
 .cardFlip{

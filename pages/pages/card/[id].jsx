@@ -74,6 +74,9 @@ const Id = () => {
                             <button className={styles.arrow} onClick={() => {setIsFlipped(false); indexDecrement(); }}><ArrowBackIosIcon/></button>
                         </span>
                         <span>
+                            {index + 1} / {questionsList.length}
+                        </span>
+                        <span>
                             <button className={styles.arrow} onClick={() => {setIsFlipped(false); indexIncrement(); }}><ArrowForwardIosIcon/></button>
                         </span>
                     </div>
