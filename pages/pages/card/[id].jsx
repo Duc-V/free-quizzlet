@@ -5,6 +5,9 @@ import useStore from '@/hooks/useStore';
 import { useEffect, useState, useMemo } from 'react';
 import styles from './card.module.css'
 import button from "@/components/Button/Button";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 const Id = () => {
     const router = useRouter();
     const { getQuiz } = useStore();
@@ -57,11 +60,14 @@ const Id = () => {
                 <>
                     <Carousel questionsList={questionsList} index={index} isFlipped={isFlipped} setIsFlipped={handleCardClick} />
                     <div>
-                        <button onClick={() => {indexIncrement(); setIsFlipped(false);}}>next</button>
+                        <span >
+                            <button className={styles.arrow} onClick={() => {indexDecrement(); setIsFlipped(false)}}><ArrowBackIosIcon/></button>
+                        </span>
+                        <span>
+                            <button className={styles.arrow} onClick={() => {indexIncrement(); setIsFlipped(false);}}><ArrowForwardIosIcon/></button>
+                        </span>
                     </div>
-                    <div>
-                        <button onClick={() => {indexDecrement(); setIsFlipped(false)}}>previous</button>
-                    </div>
+
                 </>
             ) : (
                 <div>No questions available in this quiz.</div>
