@@ -45,8 +45,18 @@ const Id = () => {
     }
 
 
-    const indexIncrement = () => updateIndex(1);
-    const indexDecrement = () => updateIndex(-1);
+    const indexIncrement = () =>{
+        setTimeout(() => {
+            updateIndex(1);
+        }, 200);
+    }
+
+    const indexDecrement = () =>{
+        setTimeout(() => {
+            updateIndex(-1);
+        }, 200);
+    }
+
 
     const handleCardClick = () => {
         setIsFlipped(!isFlipped);
@@ -61,10 +71,10 @@ const Id = () => {
                     <Carousel questionsList={questionsList} index={index} isFlipped={isFlipped} setIsFlipped={handleCardClick} />
                     <div>
                         <span >
-                            <button className={styles.arrow} onClick={() => {indexDecrement(); setIsFlipped(false)}}><ArrowBackIosIcon/></button>
+                            <button className={styles.arrow} onClick={() => {setIsFlipped(false); indexDecrement(); }}><ArrowBackIosIcon/></button>
                         </span>
                         <span>
-                            <button className={styles.arrow} onClick={() => {indexIncrement(); setIsFlipped(false);}}><ArrowForwardIosIcon/></button>
+                            <button className={styles.arrow} onClick={() => {setIsFlipped(false); indexIncrement(); }}><ArrowForwardIosIcon/></button>
                         </span>
                     </div>
 
