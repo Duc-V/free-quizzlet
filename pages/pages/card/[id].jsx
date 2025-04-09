@@ -64,23 +64,25 @@ const Id = () => {
 
 
     return (
-        <div className={styles.carousel}>
-            <div className={styles.name}>{quiz.name}</div>
-            {questionsList.length > 0 ? (
-                <>
-                    <Carousel questionsList={questionsList} index={index} isFlipped={isFlipped} setIsFlipped={handleCardClick} />
-                    <div>
-                        <button className={styles.arrowButton} onClick={() => {setIsFlipped(false); indexDecrement(); }}><ArrowBackIosIcon/></button>
-                        <span>
-                            {index + 1} / {questionsList.length}
-                        </span>
-                        <button className={styles.arrowButton} onClick={() => {setIsFlipped(false); indexIncrement(); }}><ArrowForwardIosIcon/></button>
-                    </div>
+        <div className={styles.card}>
+            <div className={styles.container}>
+                <div className={styles.name}>{quiz.name}</div>
+                {questionsList.length > 0 ? (
+                    <>
+                        <Carousel questionsList={questionsList} index={index} isFlipped={isFlipped} setIsFlipped={handleCardClick} />
+                        <div>
+                            <button className={styles.arrowButton} onClick={() => {setIsFlipped(false); indexDecrement(); }}><ArrowBackIosIcon/></button>
+                            <span>
+                                {index + 1} / {questionsList.length}
+                            </span>
+                            <button className={styles.arrowButton} onClick={() => {setIsFlipped(false); indexIncrement(); }}><ArrowForwardIosIcon/></button>
+                        </div>
 
-                </>
-            ) : (
-                <div>No questions available in this quiz.</div>
-            )}
+                    </>
+                ) : (
+                    <div>No questions available in this quiz.</div>
+                )}
+            </div>
         </div>
     );
 };

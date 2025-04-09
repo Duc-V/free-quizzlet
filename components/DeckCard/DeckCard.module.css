@@ -1,12 +1,31 @@
 
 .deckcard{
+    /*positioning*/
     display: flex;
     flex-direction: row;
+    position: relative;
+
+    /*sizing*/
+    min-width: 90vw;
+    height: max(4rem, 5vh);
+
+
+    overflow: hidden;
+
     background: #a3d5ff;
-    min-width: 20rem;
+
     border: 3px solid black;
     border-radius: 0.5rem;
-    position: relative;
+
+
+    @media (min-width: 768px){
+        min-width: 20vw;
+    }
+}
+
+.name{
+    max-width: 10rem;
+    overflow: hidden;
 }
 
 .icon{

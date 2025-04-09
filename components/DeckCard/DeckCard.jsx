@@ -42,8 +42,12 @@ const DeckCard = ({quiz}) => {
                     />
                 </div>
 
+                {/*quiz name*/}
                 <div>
-                    {quiz.name ? quiz.name : "unnamed quiz"}
+                    <div className={styles.name}>
+                        {quiz.name ? quiz.name : "unnamed quiz"}
+                    </div>
+
                     <div>
                         Flashcard set - {quiz.questions.length} items
                     </div>
@@ -57,15 +61,6 @@ const DeckCard = ({quiz}) => {
                             <EditIcon/>
                     </span>
                 </div>
-
-                <div>
-
-
-
-
-
-                </div>
-
             </Link>
         </div>
     );
