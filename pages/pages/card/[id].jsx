@@ -65,20 +65,16 @@ const Id = () => {
 
     return (
         <div className={styles.carousel}>
-            <div>{quiz.name}</div>
+            <div className={styles.name}>{quiz.name}</div>
             {questionsList.length > 0 ? (
                 <>
                     <Carousel questionsList={questionsList} index={index} isFlipped={isFlipped} setIsFlipped={handleCardClick} />
                     <div>
-                        <span >
-                            <button className={styles.arrow} onClick={() => {setIsFlipped(false); indexDecrement(); }}><ArrowBackIosIcon/></button>
-                        </span>
+                        <button className={styles.arrowButton} onClick={() => {setIsFlipped(false); indexDecrement(); }}><ArrowBackIosIcon/></button>
                         <span>
                             {index + 1} / {questionsList.length}
                         </span>
-                        <span>
-                            <button className={styles.arrow} onClick={() => {setIsFlipped(false); indexIncrement(); }}><ArrowForwardIosIcon/></button>
-                        </span>
+                        <button className={styles.arrowButton} onClick={() => {setIsFlipped(false); indexIncrement(); }}><ArrowForwardIosIcon/></button>
                     </div>
 
                 </>
